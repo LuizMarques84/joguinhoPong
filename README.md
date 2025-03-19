@@ -1,4 +1,4 @@
-#  Pong Narrado: A Nostalgia do Clássico com um Toque Moderno! 
+#  Jogo do Pong: A Nostalgia do Clássico com um Toque Moderno! 
 
 Reviva a emoção do clássico Pong com uma experiência inovadora! Este jogo, desenvolvido com HTML5 Canvas e JavaScript, traz a nostalgia do Pong com um toque moderno: narração em português dos lances e placar, utilizando a API de síntese de voz do navegador.
 
@@ -48,10 +48,6 @@ Reviva a emoção do clássico Pong com uma experiência inovadora! Este jogo, d
 ##  Contribuição
 
 Sinta-se à vontade para contribuir com ideias, melhorias e correções de bugs! Abra uma issue ou envie um pull request.
-
-## ️ Imagens do Jogo
-
-![Imagem do Jogo](https://placehold.co/600x300?text=Pong+Narrado)
 
 ##  Links Úteis
 
