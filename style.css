@@ -1,0 +1,50 @@
+/* style.css */
+body {
+    text-align: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #222;
+    color: white;
+    font-size: 20px;
+}
+.player-score {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.match-info {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.goal-box, .timer {
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+}
+canvas {
+    display: block;
+    margin: 20px auto;
+    background-color: green;
+}
+.controls {
+    margin-top: 20px;
+}
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
