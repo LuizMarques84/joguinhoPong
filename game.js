@@ -64,7 +64,7 @@ function checkCollision(player, ball) {
 
 function updateGame() {
     if (!gameRunning) return;
-    
+
     ball.x += ball.dx;
     ball.y += ball.dy;
 
@@ -100,7 +100,13 @@ function updateGame() {
             ball.dx *= -1;
         }
     }
-    
+
+    // Nova lógica de movimento dos jogadores
+    if (input.up1 && player1.y - player1.radius > 0) player1.y -= 5;
+    if (input.down1 && player1.y + player1.radius < canvas.height) player1.y += 5;
+    if (input.up2 && player2.y - player2.radius > 0) player2.y -= 5;
+    if (input.down2 && player2.y + player2.radius < canvas.height) player2.y += 5;
+
     document.getElementById("player1Goals").textContent = score1;
     document.getElementById("player2Goals").textContent = score2;
 }
