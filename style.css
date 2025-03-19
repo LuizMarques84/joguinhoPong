@@ -3,7 +3,10 @@ body {
     text-align: center;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    max-width: 800px; /* Ajuste a largura máxima conforme necessário */
+    margin: 20px auto; /* Centraliza o body */
 }
+
 .scoreboard {
     display: flex;
     justify-content: space-between;
@@ -13,6 +16,7 @@ body {
     color: white;
     font-size: 20px;
 }
+
 .player-score {
     flex: 1;
     text-align: center;
@@ -20,12 +24,14 @@ body {
     font-size: 24px;
     font-weight: bold;
 }
+
 .match-info {
     flex: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
 .goal-box, .timer {
     background: #444;
     padding: 10px;
@@ -33,14 +39,19 @@ body {
     font-weight: bold;
     font-size: 24px;
 }
+
 canvas {
     display: block;
     margin: 20px auto;
     background-color: green;
+    width: 100%; /* Torna o canvas responsivo em largura */
+    height: auto; /* Ajusta a altura automaticamente */
 }
+
 .controls {
     margin-top: 20px;
 }
+
 .controls button {
     padding: 10px 20px;
     margin: 5px;
@@ -48,3 +59,67 @@ canvas {
     cursor: pointer;
 }
 
+#controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#controls button {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#controls button:active {
+    background-color: #555;
+}
+
+/* Estilos para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    canvas {
+        width: 90%; /* Ajuste a largura do canvas */
+        height: auto; /* Ajuste a altura automaticamente */
+    }
+
+    .scoreboard {
+        font-size: 16px; /* Diminui o tamanho da fonte do placar */
+    }
+
+    .controls button {
+        padding: 8px 16px; /* Diminui o padding dos botões de controle */
+        font-size: 16px; /* Diminui o tamanho da fonte dos botões de controle */
+    }
+
+    #controls button {
+        padding: 10px 20px; /* Diminui o padding dos botões virtuais */
+        font-size: 20px; /* Diminui o tamanho da fonte dos botões virtuais */
+    }
+}
+
+/* Estilos para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+    canvas {
+        width: 95%; /* Ajuste a largura do canvas para telas menores */
+    }
+
+    .scoreboard {
+        font-size: 14px; /* Diminui ainda mais o tamanho da fonte do placar */
+    }
+
+    .controls button {
+        font-size: 14px; /* Diminui ainda mais o tamanho da fonte dos botões de controle */
+    }
+
+    #controls button {
+        font-size: 18px; /* Diminui ainda mais o tamanho da fonte dos botões virtuais */
+    }
+}
