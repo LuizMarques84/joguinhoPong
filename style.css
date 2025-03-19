@@ -11,17 +11,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 1vh 2vw; /* Padding vertical de 1% e horizontal de 2% da viewport */
     background: #222;
     color: white;
-    font-size: 20px;
+    font-size: 3vw; /* Tamanho da fonte de 3% da largura da viewport */
 }
 
 .player-score {
     flex: 1;
     text-align: center;
-    padding: 10px;
-    font-size: 24px;
+    padding: 1vh 2vw;
+    font-size: 4vw;
     font-weight: bold;
 }
 
@@ -34,28 +34,29 @@ body {
 
 .goal-box, .timer {
     background: #444;
-    padding: 10px;
+    padding: 1vh 2vw;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 4vw;
 }
 
 canvas {
+    width: 90vw; /* 90% da largura da viewport */
+    height: auto; /* Ajuste automático da altura */
+    max-height: 80vh; /* Altura máxima de 80% da viewport */
     display: block;
-    margin: 20px auto;
+    margin: 2vh auto; /* Margem vertical de 2% da viewport */
     background-color: green;
-    width: 100%; /* Torna o canvas responsivo em largura */
-    height: auto; /* Ajusta a altura automaticamente */
 }
 
 .controls {
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 .controls button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 18px;
+    padding: 1vh 2vw;
+    margin: 0.5vh 1vw;
+    font-size: 3vw;
     cursor: pointer;
 }
 
@@ -65,13 +66,13 @@ canvas {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 1vh 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 #controls button {
-    padding: 15px 30px;
-    font-size: 24px;
+    padding: 2vh 4vw;
+    font-size: 4vw;
     background-color: #333;
     color: white;
     border: none;

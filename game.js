@@ -46,6 +46,67 @@ function drawRect(obj) {
     ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
 }
 
+const input = {
+    up1: false,
+    down1: false,
+    up2: false,
+    down2: false
+};
+
+function handleKeyDown(e) {
+    if (e.key.toLowerCase() === "w") input.up1 = true;
+    if (e.key.toLowerCase() === "s") input.down1 = true;
+    if (e.key === "ArrowUp") input.up2 = true;
+    if (e.key === "ArrowDown") input.down2 = true;
+}
+
+function handleKeyUp(e) {
+    if (e.key.toLowerCase() === "w") input.up1 = false;
+    if (e.key.toLowerCase() === "s") input.down1 = false;
+    if (e.key === "ArrowUp") input.up2 = false;
+    if (e.key === "ArrowDown") input.down2 = false;
+}
+
+function handleTouchStart(e) {
+    const touch = e.touches[0];
+    const touchY = touch.clientY;
+
+    if (touch.clientX < canvas.width / 2) { // Jogador 1
+        input.up1 = touchY < player1.y;
+        input.down1 = touchY > player1.y;
+    } else { // Jogador 2
+        input.up2 = touchY < player2.y;
+        input.down2 = touchY > player2.y;
+    }
+}
+
+function handleTouchMove(e) {
+    handleTouchStart(e); // Reutiliza a lógica de touchstart
+}
+
+function handleTouchEnd() {
+    input.up1 = false;
+    input.down1 = false;
+    input.up2 = false;
+    input.down2 = false;
+}
+
+document.getElementById("up1").addEventListener("touchstart", () => input.up1 = true);
+document.getElementById("up1").addEventListener("touchend", () => input.up1 = false);
+document.getElementById("down1").addEventListener("touchstart", () => input.down1 = true);
+document.getElementById("down1").addEventListener("touchend", () => input.down1 = false);
+document.getElementById("up2").addEventListener("touchstart", () => input.up2 = true);
+document.getElementById("up2").addEventListener("touchend", () => input.up2 = false);
+document.getElementById("down2").addEventListener("touchstart", () => input.down2 = true);
+document.getElementById("down2").addEventListener("touchend", () => input.down2 = false);
+
+document.addEventListener("keydown", handleKeyDown);
+document.addEventListener("keyup", handleKeyUp);
+
+canvas.addEventListener("touchstart", handleTouchStart);
+canvas.addEventListener("touchmove", handleTouchMove);
+canvas.addEventListener("touchend", handleTouchEnd);
+
 function drawGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawRect(goal1);
